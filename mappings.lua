@@ -8,7 +8,17 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
+    ["<leader>q"] =  {"<cmd>q!<cr>", desc = "Quit"};
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<leader>c"] = {'"+y<cr>', desc = "Copy All"},
+    ["<leader>v"] = {'"+p<cr>', desc = "Paste All"},
+    ["<leader>a"] =  { "ggVG<cr>", desc = "Select All"},
+    ["<leader>b?"] = {
+      function()
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").open(bufnr) end)
+      end,
+      desc = "Pick to open",
+    },
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)

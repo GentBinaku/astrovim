@@ -34,6 +34,17 @@ return {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
+          "rs",
+          "c",
+          "cpp",
+          "cmake",
+          "txt",
+           "markdown",
+          "lua",
+          "json",
+          "yaml",
+          "html",
+          "toml",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -52,6 +63,11 @@ return {
     servers = {
       -- "pyright"
     },
+    ["server-settings"] = {
+        clangd = {
+          capabilities = { offsetEncoding = "utf-8" },
+        },
+    }, 
   },
 
   -- Configure require("lazy").setup() options
@@ -69,6 +85,7 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    require("nvim-dap-projects").search_project_config() 
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
