@@ -25,4 +25,8 @@ return {
   { import = "astrocommunity.workflow.bad-practices-nvim"},
   { import = "astrocommunity.scrolling.neoscroll-nvim"},
   { import = "astrocommunity.motion.leap-nvim"},
+  { import = "astrocommunity.workflow.hardtime-nvim"},
+  { import = "astrocommunity.diagnostics.trouble-nvim"},
+  { import = "astrocommunity.color.transparent-nvim"},
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim"},
 }
